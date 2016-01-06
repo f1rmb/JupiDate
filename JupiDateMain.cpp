@@ -10,17 +10,18 @@
 #include "JupiDateMain.h"
 
 //(*InternalHeaders(JupiDateFrame)
-#include <wx/settings.h>
-#include <wx/string.h>
-#include <wx/intl.h>
-#include <wx/font.h>
-#include <wx/bitmap.h>
-#include <wx/image.h>
 #include <wx/artprov.h>
+#include <wx/bitmap.h>
+#include <wx/icon.h>
+#include <wx/settings.h>
+#include <wx/font.h>
+#include <wx/intl.h>
+#include <wx/image.h>
+#include <wx/string.h>
 //*)
 #include <wx/msgdlg.h>
 #include <wx/log.h>
-#include <wx/app.h>
+//#include <wx/app.h>
 
 #include "version.h"
 
@@ -37,7 +38,6 @@
 #include <sys/ioctl.h>
 #include <linux/serial.h>
 #endif
-//#include <errno.h>
 
 #include <vector>
 
@@ -51,7 +51,6 @@ const long JupiDateFrame::ID_TEXTCTRL1 = wxNewId();
 const long JupiDateFrame::ID_PANEL1 = wxNewId();
 const long JupiDateFrame::ID_BUTTON1 = wxNewId();
 const long JupiDateFrame::ID_TEXTCTRL2 = wxNewId();
-const long JupiDateFrame::ID_STATICLINE2 = wxNewId();
 const long JupiDateFrame::ID_TOGGLEBUTTON2 = wxNewId();
 const long JupiDateFrame::ID_BUTTON2 = wxNewId();
 const long JupiDateFrame::ID_STATICLINE1 = wxNewId();
@@ -156,25 +155,30 @@ void JupiDateFrame::_updateDateTime()
 JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL)
 {
     //(*Initialize(JupiDateFrame)
+    wxBoxSizer* BoxSizer4;
+    wxBoxSizer* BoxSizer6;
     wxBoxSizer* BoxSizer15;
-    wxBoxSizer* BoxSizer3;
-    wxBoxSizer* BoxSizer10;
+    wxBoxSizer* BoxSizer5;
     wxBoxSizer* BoxSizer7;
-    wxBoxSizer* BoxSizer11;
+    wxBoxSizer* BoxSizer8;
     wxBoxSizer* BoxSizer13;
     wxBoxSizer* BoxSizer2;
-    wxBoxSizer* BoxSizer9;
-    wxBoxSizer* BoxSizer4;
-    wxBoxSizer* BoxSizer8;
-    wxBoxSizer* BoxSizer1;
+    wxBoxSizer* BoxSizer11;
     wxBoxSizer* BoxSizer12;
     wxBoxSizer* BoxSizer14;
-    wxBoxSizer* BoxSizer6;
-    wxBoxSizer* BoxSizer5;
+    wxBoxSizer* BoxSizer1;
+    wxBoxSizer* BoxSizer9;
+    wxBoxSizer* BoxSizer3;
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE|wxMAXIMIZE_BOX|wxMINIMIZE_BOX, _T("wxID_ANY"));
-    SetClientSize(wxSize(600,350));
-    SetMinSize(wxSize(600,350));
+    SetClientSize(wxSize(650,350));
+    SetMinSize(wxSize(650,350));
+    SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNFACE));
+    {
+    	wxIcon FrameIcon;
+    	FrameIcon.CopyFromBitmap(wxBitmap(wxImage(_T("D:\\Sources\\Jupidate\\Jupiter-icon.png"))));
+    	SetIcon(FrameIcon);
+    }
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);
     BoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
     m_wUpdateSerialListBtn = new wxBitmapButton(this, ID_BITMAPBUTTON1, wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_FIND_AND_REPLACE")),wxART_BUTTON), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON1"));
@@ -229,10 +233,6 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL
     m_wRXText->SetToolTip(_("RX monitor"));
     BoxSizer9->Add(m_wRXText, 1, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     m_wRXSizer->Add(BoxSizer9, 1, wxTOP|wxBOTTOM|wxLEFT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxSizer10 = new wxBoxSizer(wxVERTICAL);
-    StaticLine2 = new wxStaticLine(this, ID_STATICLINE2, wxDefaultPosition, wxSize(10,-1), wxLI_VERTICAL, _T("ID_STATICLINE2"));
-    BoxSizer10->Add(StaticLine2, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 1);
-    m_wRXSizer->Add(BoxSizer10, 0, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer13 = new wxBoxSizer(wxVERTICAL);
     BoxSizer15 = new wxBoxSizer(wxVERTICAL);
     BoxSizer13->Add(BoxSizer15, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
@@ -281,13 +281,22 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL
     Connect(ID_TIMER2,wxEVT_TIMER,(wxObjectEventFunction)&JupiDateFrame::OnTimer2Trigger);
     //*)
 
-    SetTitle(wxTheApp->GetAppName() + wxT(" v") + wxString::FromAscii(AutoVersion::FULLVERSION_STRING));
+//    SetTitle(wxTheApp->GetAppName() + wxT(" v") + wxString::FromAscii(AutoVersion::FULLVERSION_STRING));
 
     // Define App's icon
+#if defined(WIN32)
+    //SetIcon(LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON), IMAGE_ICON, 16, 16, 0));
+    //wxBitmap bitmap = wxBitmap(wxBITMAP(Jupiter_icon));
+    //wxIcon frameIcon;
+    //frameIcon.CopyFromBitmap(bitmap);
+    //SetIcon(LoadIcon(NULL, MAKEINTRESOURCE(IDI_ICON)));//wxICON(Jupiter-icon));
+    //SetIcon()
+#else
     wxBitmap bitmap = wxBitmap(wxBITMAP(Jupiter_icon));
     wxIcon frameIcon;
     frameIcon.CopyFromBitmap(bitmap);
     SetIcon(frameIcon);
+#endif // defined
 
     _enableSizerChilds(m_wRXSizer, false);
 
@@ -320,7 +329,6 @@ void JupiDateFrame::OnBitmapButton1Click(wxCommandEvent& event)
 
 void JupiDateFrame::Onm_wSetBtnClick(wxCommandEvent& event)
 {
-    m_wRXTimer.Stop();
     wxDateTime  dt = wxDateTime::Now();
     char        buffer[80] = "";
 
@@ -344,8 +352,6 @@ void JupiDateFrame::Onm_wSetBtnClick(wxCommandEvent& event)
     }
     else
         wxMessageDialog(this, wxT("GPS has been updated"), wxT("Success..."), wxOK | wxCAPTION | wxICON_INFORMATION).ShowModal();
-
-    m_wRXTimer.Start();
 }
 
 void JupiDateFrame::OnTimer2Trigger(wxTimerEvent& event)

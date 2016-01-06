@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="JupiDateFrame">
-		<size>600,350</size>
-		<minsize>600,350</minsize>
+		<icon>D:\Sources\Jupidate\Jupiter-icon.png</icon>
+		<size>650,350</size>
+		<bg>wxSYS_COLOUR_BTNFACE</bg>
+		<minsize>650,350</minsize>
 		<id_arg>0</id_arg>
 		<style>wxDEFAULT_FRAME_STYLE|wxMAXIMIZE_BOX|wxMINIMIZE_BOX</style>
 		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
@@ -146,22 +148,6 @@
 						<flag>wxTOP|wxBOTTOM|wxLEFT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>1</option>
-					</object>
-					<object class="sizeritem">
-						<object class="wxBoxSizer" variable="BoxSizer10" member="no">
-							<orient>wxVERTICAL</orient>
-							<object class="sizeritem">
-								<object class="wxStaticLine" name="ID_STATICLINE2" variable="StaticLine2" member="yes">
-									<size>10,-1</size>
-									<style>wxLI_VERTICAL</style>
-								</object>
-								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>1</border>
-								<option>1</option>
-							</object>
-						</object>
-						<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-						<border>5</border>
 					</object>
 					<object class="sizeritem">
 						<object class="wxBoxSizer" variable="BoxSizer13" member="no">
