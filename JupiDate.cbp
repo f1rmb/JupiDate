@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="JupiDate" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/JupiDate" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/JupiDate" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`wx-config --cflags`" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add directory="third/libctb-0.16/include" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="JupiDateApp.cpp" />
+		<Unit filename="JupiDateApp.h" />
+		<Unit filename="JupiDateMain.cpp" />
+		<Unit filename="JupiDateMain.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/ctb.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/fifo.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/iobase.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/linux/serport.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/linux/timer.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/portscan.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/serport.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/serportx.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/timer.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/win32/serport.h" />
+		<Unit filename="third/libctb-0.16/include/ctb-0.16/win32/timer.h" />
+		<Unit filename="third/libctb-0.16/src/fifo.cpp" />
+		<Unit filename="third/libctb-0.16/src/iobase.cpp" />
+		<Unit filename="third/libctb-0.16/src/linux/serport.cpp" />
+		<Unit filename="third/libctb-0.16/src/linux/timer.cpp" />
+		<Unit filename="third/libctb-0.16/src/portscan.cpp" />
+		<Unit filename="third/libctb-0.16/src/serportx.cpp" />
+		<Unit filename="third/libctb-0.16/src/win32/serport.cpp" />
+		<Unit filename="third/libctb-0.16/src/win32/timer.cpp" />
+		<Unit filename="version.h" />
+		<Unit filename="wxsmith/JupiDateframe.wxs" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1" />
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="JupiDateApp.cpp" main="JupiDateFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/JupiDateframe.wxs" src="JupiDateMain.cpp" hdr="JupiDateMain.h" fwddecl="0" i18n="1" name="JupiDateFrame" language="CPP" />
+				</resources>
+			</wxsmith>
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" use_define="0" update_manifest="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
