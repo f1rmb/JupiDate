@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1452088626 source:d:\sources\jupidate\jupidateapp.cpp
+1452112524 source:d:\sources\jupidate\jupidateapp.cpp
 	"JupiDateApp.h"
 	"JupiDateMain.h"
 	<wx/image.h>
@@ -531,20 +531,20 @@
 1186407594 c:\wxwidgets-2.8.12\include\wx\univ\theme.h
 	"wx/string.h"
 
-1452092633 d:\sources\jupidate\jupidatemain.h
+1452112524 d:\sources\jupidate\jupidatemain.h
+	<wx/bmpbuttn.h>
+	<wx/combobox.h>
 	<wx/sizer.h>
-	<wx/textctrl.h>
-	<wx/tglbtn.h>
-	<wx/statline.h>
+	<wx/button.h>
 	<wx/panel.h>
 	<wx/snglinst.h>
-	<wx/choice.h>
-	<wx/bmpbuttn.h>
-	<wx/button.h>
-	<wx/utils.h>
+	<wx/statline.h>
 	<wx/frame.h>
+	<wx/tglbtn.h>
+	<wx/textctrl.h>
+	<wx/choice.h>
+	<wx/utils.h>
 	<wx/timer.h>
-	<wx/combobox.h>
 	<vector>
 	<ctb-0.16/ctb.h>
 
@@ -1058,19 +1058,21 @@
 1186407692 c:\wxwidgets-2.8.12\include\wx\imagiff.h
 	"wx/image.h"
 
-1452092770 source:d:\sources\jupidate\jupidatemain.cpp
+1452113184 source:d:\sources\jupidate\jupidatemain.cpp
 	"JupiDateMain.h"
-	<wx/artprov.h>
-	<wx/bitmap.h>
-	<wx/icon.h>
 	<wx/settings.h>
-	<wx/font.h>
-	<wx/intl.h>
-	<wx/image.h>
 	<wx/string.h>
+	<wx/intl.h>
+	<wx/font.h>
+	<wx/bitmap.h>
+	<wx/image.h>
+	<wx/artprov.h>
 	<wx/msgdlg.h>
 	<wx/log.h>
+	<wx/mstream.h>
+	<wx/stdpaths.h>
 	"version.h"
+	"resource.h"
 	<stdlib.h>
 	<dirent.h>
 	<stdio.h>
@@ -1136,7 +1138,7 @@
 
 1452088330 d:\sources\jupidate\version.h
 
-1452091187 source:d:\sources\jupidate\resource.rc
+1452113177 source:d:\sources\jupidate\resource.rc
 	"wx/msw/wx.rc"
 
 1186407652 c:\wxwidgets-2.8.12\include\wx\msw\wx.rc
@@ -1190,7 +1192,7 @@
 	"ctb-0.16/serportx.h"
 	<sstream>
 
-1452088330 source:d:\sources\jupidate\third\libctb-0.16\src\win32\serport.cpp
+1452113260 source:d:\sources\jupidate\third\libctb-0.16\src\win32\serport.cpp
 	<string.h>
 	"ctb-0.16/serport.h"
 
@@ -1200,5 +1202,23 @@
 	<windows.h>
 	"ctb-0.16/timer.h"
 
-1452090663 d:\sources\jupidate\resource.h
+1452113231 d:\sources\jupidate\resource.h
+
+1211176296 c:\wxwidgets-2.8.12\include\wx\mstream.h
+	"wx/defs.h"
+	"wx/stream.h"
+
+1186407692 c:\wxwidgets-2.8.12\include\wx\stdpaths.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/msw/stdpaths.h"
+	"wx/mac/corefoundation/stdpaths.h"
+	"wx/os2/stdpaths.h"
+	"wx/unix/stdpaths.h"
+	"wx/palmos/stdpaths.h"
+
+1186407650 c:\wxwidgets-2.8.12\include\wx\msw\stdpaths.h
+
+1186407596 c:\wxwidgets-2.8.12\include\wx\unix\stdpaths.h
 

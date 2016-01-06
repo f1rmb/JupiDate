@@ -281,7 +281,11 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent, wxString appName, wxWindowID id) 
 
     SetTitle(appName + wxT(" v") + wxString::FromAscii(AutoVersion::FULLVERSION_STRING));
 
+
     // Use embedded image as icon
+#if defined(WIN32)
+    SetIcon(wxICON(JupiDate_Icon));
+#else
     wxIcon              micon;
     wxMemoryInputStream istream(Jupiter_icon_PNG, sizeof(Jupiter_icon_PNG));
     wxImage             mimg(istream, wxBITMAP_TYPE_ANY); /* or wxBITMAP_TYPE_ANY, etc. */
@@ -292,6 +296,7 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent, wxString appName, wxWindowID id) 
 
     micon.CopyFromBitmap(mbmp);
     SetIcon(micon);
+#endif
 
     _enableSizerChilds(m_wRXSizer, false);
 
