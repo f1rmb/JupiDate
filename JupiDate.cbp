@@ -43,6 +43,7 @@
 		<Unit filename="JupiDateApp.h" />
 		<Unit filename="JupiDateMain.cpp" />
 		<Unit filename="JupiDateMain.h" />
+		<Unit filename="resource.h" />
 		<Unit filename="third/libctb-0.16/include/ctb-0.16/ctb.h" />
 		<Unit filename="third/libctb-0.16/include/ctb-0.16/fifo.h" />
 		<Unit filename="third/libctb-0.16/include/ctb-0.16/iobase.h" />

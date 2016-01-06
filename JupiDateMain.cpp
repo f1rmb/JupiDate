@@ -10,20 +10,23 @@
 #include "JupiDateMain.h"
 
 //(*InternalHeaders(JupiDateFrame)
-#include <wx/artprov.h>
-#include <wx/bitmap.h>
-#include <wx/icon.h>
 #include <wx/settings.h>
-#include <wx/font.h>
-#include <wx/intl.h>
-#include <wx/image.h>
 #include <wx/string.h>
+#include <wx/intl.h>
+#include <wx/font.h>
+#include <wx/bitmap.h>
+#include <wx/image.h>
+#include <wx/artprov.h>
 //*)
 #include <wx/msgdlg.h>
 #include <wx/log.h>
 //#include <wx/app.h>
+#include <wx/mstream.h>
+#include <wx/stdpaths.h>
 
 #include "version.h"
+
+#include "resource.h"
 
 #if 0
 #include <stdlib.h>
@@ -46,14 +49,14 @@ const long JupiDateFrame::ID_BITMAPBUTTON1 = wxNewId();
 const long JupiDateFrame::ID_COMBOBOX1 = wxNewId();
 const long JupiDateFrame::ID_CHOICE1 = wxNewId();
 const long JupiDateFrame::ID_TOGGLEBUTTON1 = wxNewId();
-const long JupiDateFrame::ID_STATICLINE3 = wxNewId();
+const long JupiDateFrame::ID_STATICLINE1 = wxNewId();
 const long JupiDateFrame::ID_TEXTCTRL1 = wxNewId();
 const long JupiDateFrame::ID_PANEL1 = wxNewId();
 const long JupiDateFrame::ID_BUTTON1 = wxNewId();
 const long JupiDateFrame::ID_TEXTCTRL2 = wxNewId();
 const long JupiDateFrame::ID_TOGGLEBUTTON2 = wxNewId();
 const long JupiDateFrame::ID_BUTTON2 = wxNewId();
-const long JupiDateFrame::ID_STATICLINE1 = wxNewId();
+const long JupiDateFrame::ID_STATICLINE2 = wxNewId();
 const long JupiDateFrame::ID_BUTTON3 = wxNewId();
 const long JupiDateFrame::ID_TIMER1 = wxNewId();
 const long JupiDateFrame::ID_TIMER2 = wxNewId();
@@ -152,33 +155,28 @@ void JupiDateFrame::_updateDateTime()
     m_wDateText->SetValue(str);
 }
 
-JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL)
+JupiDateFrame::JupiDateFrame(wxWindow* parent, wxString appName, wxWindowID id) : m_deviceBase(NULL)
 {
     //(*Initialize(JupiDateFrame)
-    wxBoxSizer* BoxSizer4;
-    wxBoxSizer* BoxSizer6;
     wxBoxSizer* BoxSizer15;
-    wxBoxSizer* BoxSizer5;
+    wxBoxSizer* BoxSizer3;
     wxBoxSizer* BoxSizer7;
-    wxBoxSizer* BoxSizer8;
+    wxBoxSizer* BoxSizer11;
     wxBoxSizer* BoxSizer13;
     wxBoxSizer* BoxSizer2;
-    wxBoxSizer* BoxSizer11;
+    wxBoxSizer* BoxSizer9;
+    wxBoxSizer* BoxSizer4;
+    wxBoxSizer* BoxSizer8;
+    wxBoxSizer* BoxSizer1;
     wxBoxSizer* BoxSizer12;
     wxBoxSizer* BoxSizer14;
-    wxBoxSizer* BoxSizer1;
-    wxBoxSizer* BoxSizer9;
-    wxBoxSizer* BoxSizer3;
+    wxBoxSizer* BoxSizer6;
+    wxBoxSizer* BoxSizer5;
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE|wxMAXIMIZE_BOX|wxMINIMIZE_BOX, _T("wxID_ANY"));
     SetClientSize(wxSize(650,350));
     SetMinSize(wxSize(650,350));
     SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNFACE));
-    {
-    	wxIcon FrameIcon;
-    	FrameIcon.CopyFromBitmap(wxBitmap(wxImage(_T("D:\\Sources\\Jupidate\\Jupiter-icon.png"))));
-    	SetIcon(FrameIcon);
-    }
     BoxSizer1 = new wxBoxSizer(wxVERTICAL);
     BoxSizer2 = new wxBoxSizer(wxHORIZONTAL);
     m_wUpdateSerialListBtn = new wxBitmapButton(this, ID_BITMAPBUTTON1, wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_FIND_AND_REPLACE")),wxART_BUTTON), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON1"));
@@ -201,8 +199,8 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL
     BoxSizer2->Add(m_wConnBtn, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer2, 0, wxTOP|wxLEFT|wxRIGHT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 0);
     BoxSizer14 = new wxBoxSizer(wxHORIZONTAL);
-    StaticLine3 = new wxStaticLine(this, ID_STATICLINE3, wxDefaultPosition, wxSize(10,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE3"));
-    BoxSizer14->Add(StaticLine3, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    StaticLine1 = new wxStaticLine(this, ID_STATICLINE1, wxDefaultPosition, wxSize(10,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE1"));
+    BoxSizer14->Add(StaticLine1, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer14, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer3 = new wxBoxSizer(wxHORIZONTAL);
     BoxSizer12 = new wxBoxSizer(wxHORIZONTAL);
@@ -245,8 +243,8 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL
     m_wRXSizer->Add(BoxSizer13, 0, wxALIGN_BOTTOM|wxALIGN_CENTER_HORIZONTAL, 5);
     BoxSizer1->Add(m_wRXSizer, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer8 = new wxBoxSizer(wxHORIZONTAL);
-    StaticLine1 = new wxStaticLine(this, ID_STATICLINE1, wxDefaultPosition, wxSize(10,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE1"));
-    BoxSizer8->Add(StaticLine1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    StaticLine2 = new wxStaticLine(this, ID_STATICLINE2, wxDefaultPosition, wxSize(10,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE2"));
+    BoxSizer8->Add(StaticLine2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer8, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer5 = new wxBoxSizer(wxHORIZONTAL);
     BoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
@@ -281,22 +279,19 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent,wxWindowID id) : m_deviceBase(NULL
     Connect(ID_TIMER2,wxEVT_TIMER,(wxObjectEventFunction)&JupiDateFrame::OnTimer2Trigger);
     //*)
 
-//    SetTitle(wxTheApp->GetAppName() + wxT(" v") + wxString::FromAscii(AutoVersion::FULLVERSION_STRING));
+    SetTitle(appName + wxT(" v") + wxString::FromAscii(AutoVersion::FULLVERSION_STRING));
 
-    // Define App's icon
-#if defined(WIN32)
-    //SetIcon(LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON), IMAGE_ICON, 16, 16, 0));
-    //wxBitmap bitmap = wxBitmap(wxBITMAP(Jupiter_icon));
-    //wxIcon frameIcon;
-    //frameIcon.CopyFromBitmap(bitmap);
-    //SetIcon(LoadIcon(NULL, MAKEINTRESOURCE(IDI_ICON)));//wxICON(Jupiter-icon));
-    //SetIcon()
-#else
-    wxBitmap bitmap = wxBitmap(wxBITMAP(Jupiter_icon));
-    wxIcon frameIcon;
-    frameIcon.CopyFromBitmap(bitmap);
-    SetIcon(frameIcon);
-#endif // defined
+    // Use embedded image as icon
+    wxIcon              micon;
+    wxMemoryInputStream istream(Jupiter_icon_PNG, sizeof(Jupiter_icon_PNG));
+    wxImage             mimg(istream, wxBITMAP_TYPE_ANY); /* or wxBITMAP_TYPE_ANY, etc. */
+
+    mimg.SetMaskColour(221, 173, 115); // Set color mask
+
+    wxBitmap mbmp(mimg);
+
+    micon.CopyFromBitmap(mbmp);
+    SetIcon(micon);
 
     _enableSizerChilds(m_wRXSizer, false);
 

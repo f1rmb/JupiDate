@@ -2,29 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="third/libctb-0.16/src/linux/serport.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="JupiDateMain.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8222" topLine="300" />
+			<Cursor1 position="898" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="resource.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="70" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="JupiDateMain.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2106" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="third/libctb-0.16/src/serportx.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2455" topLine="82" />
-		</Cursor>
-	</File>
-	<File name="JupiDateMain.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="45558" topLine="2349" />
-		</Cursor>
-	</File>
-	<File name="JupiDateApp.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="457" topLine="0" />
+			<Cursor1 position="12883" topLine="271" />
 		</Cursor>
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,5 +22,25 @@
 			<Cursor1 position="691" topLine="0" />
 		</Cursor>
 	</File>
-	<EditorTabsLayout layout="0643d6c0568cd2db004992df00000002=*0;JupiDate:JupiDateMain.cpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=472;besth=229;minw=472;minh=229;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=0643d6c0568cd2db004992df00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<File name="JupiDateApp.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="404" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="third/libctb-0.16/src/serportx.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2455" topLine="82" />
+		</Cursor>
+	</File>
+	<File name="third/libctb-0.16/src/linux/serport.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8222" topLine="300" />
+		</Cursor>
+	</File>
+	<File name="JupiDateApp.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="880" topLine="21" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="052550f0568d6eca006d8ae800000002=*1;JupiDate:JupiDateMain.cpp,0;JupiDate:resource.h,2;,3;JupiDate:wxsmith/JupiDateframe.wxs,4;JupiDate:JupiDateApp.cpp,5;JupiDate:JupiDateApp.h,6;JupiDate:JupiDateMain.h@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=472;besth=228;minw=472;minh=228;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=052550f0568d6eca006d8ae800000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
 </CodeBlocks_layout_file>

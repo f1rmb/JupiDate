@@ -11,19 +11,19 @@
 #define JUPIDATEMAIN_H
 
 //(*Headers(JupiDateFrame)
+#include <wx/bmpbuttn.h>
+#include <wx/combobox.h>
 #include <wx/sizer.h>
-#include <wx/textctrl.h>
-#include <wx/tglbtn.h>
-#include <wx/statline.h>
+#include <wx/button.h>
 #include <wx/panel.h>
 #include <wx/snglinst.h>
-#include <wx/choice.h>
-#include <wx/bmpbuttn.h>
-#include <wx/button.h>
-#include <wx/utils.h>
+#include <wx/statline.h>
 #include <wx/frame.h>
+#include <wx/tglbtn.h>
+#include <wx/textctrl.h>
+#include <wx/choice.h>
+#include <wx/utils.h>
 #include <wx/timer.h>
-#include <wx/combobox.h>
 //*)
 
 #include <vector>
@@ -33,7 +33,7 @@
 class JupiDateFrame: public wxFrame
 {
     public:
-        JupiDateFrame(wxWindow* parent, wxWindowID id = -1);
+        JupiDateFrame(wxWindow* parent, wxString appName, wxWindowID id = -1);
         virtual ~JupiDateFrame();
 
     private:
@@ -60,37 +60,37 @@ class JupiDateFrame: public wxFrame
         static const long ID_COMBOBOX1;
         static const long ID_CHOICE1;
         static const long ID_TOGGLEBUTTON1;
-        static const long ID_STATICLINE3;
+        static const long ID_STATICLINE1;
         static const long ID_TEXTCTRL1;
         static const long ID_PANEL1;
         static const long ID_BUTTON1;
         static const long ID_TEXTCTRL2;
         static const long ID_TOGGLEBUTTON2;
         static const long ID_BUTTON2;
-        static const long ID_STATICLINE1;
+        static const long ID_STATICLINE2;
         static const long ID_BUTTON3;
         static const long ID_TIMER1;
         static const long ID_TIMER2;
         //*)
 
         //(*Declarations(JupiDateFrame)
-        wxBitmapButton* m_wUpdateSerialListBtn;
-        wxButton* m_wQuitBtn;
-        wxBoxSizer* m_wRXSizer;
-        wxTextCtrl* m_wRXText;
-        wxTimer m_wRXTimer;
-        wxComboBox* m_wSerialList;
-        wxPanel* Panel1;
-        wxChoice* m_wSpeedchoice;
-        wxToggleButton* m_wHoldBtn;
-        wxStaticLine* StaticLine3;
-        wxStaticLine* StaticLine1;
         wxToggleButton* m_wConnBtn;
-        wxButton* m_wClearBtn;
-        wxTextCtrl* m_wDateText;
+        wxPanel* Panel1;
+        wxStaticLine* StaticLine2;
         wxSingleInstanceChecker w_SingleInstanceChecker;
+        wxChoice* m_wSpeedchoice;
+        wxBoxSizer* m_wRXSizer;
+        wxToggleButton* m_wHoldBtn;
+        wxBitmapButton* m_wUpdateSerialListBtn;
+        wxStaticLine* StaticLine1;
+        wxTimer m_wRXTimer;
+        wxTextCtrl* m_wRXText;
+        wxComboBox* m_wSerialList;
+        wxTextCtrl* m_wDateText;
         wxTimer m_wDateTimeTimer;
         wxButton* m_wSetBtn;
+        wxButton* m_wQuitBtn;
+        wxButton* m_wClearBtn;
         //*)
 
         wxArrayString    m_serialArray;

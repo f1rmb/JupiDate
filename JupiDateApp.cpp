@@ -18,6 +18,7 @@ IMPLEMENT_APP(JupiDateApp);
 
 bool JupiDateApp::OnInit()
 {
+#if 0
     //(*AppInitialize
     bool wxsOK = true;
     wxInitAllImageHandlers();
@@ -28,6 +29,16 @@ bool JupiDateApp::OnInit()
     	SetTopWindow(Frame);
     }
     //*)
+#else
+    bool wxsOK = true;
+    wxInitAllImageHandlers();
+    if ( wxsOK )
+    {
+    	JupiDateFrame* Frame = new JupiDateFrame(0, wxApp::GetAppName());
+    	Frame->Show();
+    	SetTopWindow(Frame);
+    }
+#endif // 0
     return wxsOK;
 
 }
