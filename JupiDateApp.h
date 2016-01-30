@@ -4,7 +4,7 @@
  * Author:    Daniel Caujolle-Bert (danielvador@gmail.com)
  * Created:   2015-12-30
  * Copyright: Daniel Caujolle-Bert (http://naboo.homelinux.org)
- * License:
+ * License:   GPL v2
  **************************************************************/
 
 #ifndef JUPIDATEAPP_H

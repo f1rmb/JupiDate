@@ -37,6 +37,7 @@
 								<item>19200</item>
 								<item>38400</item>
 								<item>57600</item>
+								<item>115200</item>
 							</content>
 							<selection>2</selection>
 						</object>

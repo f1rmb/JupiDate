@@ -4,7 +4,7 @@
  * Author:    Daniel Caujolle-Bert (danielvador@gmail.com)
  * Created:   2015-12-30
  * Copyright: Daniel Caujolle-Bert (http://naboo.homelinux.org)
- * License:
+ * License:   GPL v2
  **************************************************************/
 
 #include "JupiDateMain.h"
@@ -193,6 +193,7 @@ JupiDateFrame::JupiDateFrame(wxWindow* parent, wxString appName, wxWindowID id) 
     m_wSpeedchoice->Append(_("19200"));
     m_wSpeedchoice->Append(_("38400"));
     m_wSpeedchoice->Append(_("57600"));
+    m_wSpeedchoice->Append(_("115200"));
     BoxSizer2->Add(m_wSpeedchoice, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     m_wConnBtn = new wxToggleButton(this, ID_TOGGLEBUTTON1, _("Connect"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TOGGLEBUTTON1"));
     m_wConnBtn->SetToolTip(_("Serial connection"));
